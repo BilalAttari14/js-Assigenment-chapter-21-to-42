@@ -197,65 +197,128 @@ if (found) {
   alert("We are sorry, " + search + " is not available.");
 }
 
-
 // Question : 19
 
 document.write("<h3>Question : 19</h3>");
-      
+
 var input1 = prompt("Enter any string you whant to compair with second string");
 var input2 = prompt("Enter any string you whant to compair with first string");
 if (input1 > input2) {
-    alert(input1 + " is greater than "+ input2);
+  alert(input1 + " is greater than " + input2);
 } else if (input1 < input2) {
-    alert( input2 + " is greater than "+ input1);
-} else{
-    alert(input1 + " are equal "+ input2);
+  alert(input2 + " is greater than " + input1);
+} else {
+  alert(input1 + " are equal " + input2);
 }
-
 
 // Question : 20
 
 document.write("<h3>Question : 20</h3>");
 
-var password = prompt("Enter a password that should contain alphabets and numbers, must be at least 6 characters, and not begin with number");
+var password = prompt(
+  "Enter a password that should contain alphabets and numbers, must be at least 6 characters, and not begin with number"
+);
 
 var passwordLength = password.length;
-var valid = true; 
+var valid = true;
 
-
-if(passwordLength < 6){
-    valid = false;
+if (passwordLength < 6) {
+  valid = false;
 }
 
 var numbercheck = password.charCodeAt(0);
-if(numbercheck >= 48 && numbercheck <= 57){
-    valid = false;
+if (numbercheck >= 48 && numbercheck <= 57) {
+  valid = false;
 }
 
 var hasAlphabet = false;
 var hasNumber = false;
 
-for(var a = 0; a < passwordLength; a++){
-    var check = password.charCodeAt(a);
+for (var a = 0; a < passwordLength; a++) {
+  var check = password.charCodeAt(a);
 
-    if((check >= 65 && check <= 90) || (check >= 97 && check <= 122)){
-        hasAlphabet = true;
+  if ((check >= 65 && check <= 90) || (check >= 97 && check <= 122)) {
+    hasAlphabet = true;
+  }
+
+  if (check >= 48 && check <= 57) {
+    hasNumber = true;
+  }
+}
+
+if (!hasAlphabet || !hasNumber) {
+  valid = false;
+}
+
+if (valid) {
+  alert("Password is valid");
+} else {
+  alert(
+    "Invalid password! Must be at least 6 characters, contain letters and numbers, and not start with a number."
+  );
+}
+
+// Question : 21
+
+document.write("<h3>Question : 21</h3>");
+
+var university = "University of Karachi";
+
+for (var i = 0; i < university.length; i++) {
+  document.write(university[i] + "<br>");
+}
+
+// Question : 22
+
+document.write("<h3>Question : 22</h3>");
+
+var userInput = prompt("Enter your input");
+document.write("User Input: " + userInput);
+var lastIndex = userInput[userInput.length - 1];
+document.write("Last character of input: " + lastIndex);
+
+// Question : 23
+
+document.write("<h3>Question : 23</h3>");
+
+var word = "The quick brown fox jumps over the lazy dog.";
+var lowerCase = word.toLowerCase();
+var check = lowerCase.split(" ");
+
+var count = 0;
+
+for (var a = 0; a < check.length; a++) {
+  if (check[a] === "the") {
+    count++;
+  }
+}
+document.write("Text: " + word);
+document.write("<br>Occurrences of 'the': " + count);
+
+// Question : 24
+
+document.write("<h3>Question : 24</h3>");
+var string = "pakistan";
+
+text = string.toLowerCase();
+
+var vowels = 0;
+var consonants = 0;
+
+for (var i = 0; i < text.length; i++) {
+    var character = text[i];
+    if (character >= 'a' && character <= 'z') {
+      
+        if (character === 'a' || character === 'e' || character === 'i' || character === 'o' || character === 'u') {
+            vowels++;
+        } else {
+            consonants++;
+        }
     }
-
-    if(check >= 48 && check <= 57){
-        hasNumber = true;
-    }
 }
 
-if(!hasAlphabet || !hasNumber){
-    valid = false;
-}
-
-if(valid){
-    alert("Password is valid");
-}else{
-    alert("Invalid password! Must be at least 6 characters, contain letters and numbers, and not start with a number.");
-}
-
+document.write("String: " + string + "<br>");
+document.write("Vowels: " + vowels + "<br>");
+document.write("Consonants: " + consonants);
 
 // -----------------------------------✌✌Chapter-21-to-25-end✌✌----------------------------------

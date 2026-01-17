@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,6 +11,76 @@
 
     <script src="Chapter-21-to-25.js"></script>
     <script src="Chapter-26-to-34.js"></script>
+    <script src="./Chapter-39-to-42.js"></script>
+    <script>
+    var stars = parseInt(prompt("Enter the initial number of stars:" , 7 ));
 
+    while (stars > 0) {
+        var i = 0;
+        while (i < stars) {
+            
+             document.write( "*" );
+            i++;
+        }
+        document.write("<br>")
+        stars--;         
+    }
+    </script>
+  </body>
+</html> -->
+<!doctype html>
+<html>
+  <head>
+    <title>Pattern Program</title>
+  </head>
+  <body>
+    <pre id="output"></pre>
+
+    <script>
+      var number = parseInt(prompt("Enter number of lines:", 4));
+
+      var pattren;
+
+      // a.
+      document.write("<b>a.</b> <br>")
+      var i = 1;
+      while (i <= number) {
+        pattren = "*"
+        var j = 1;
+        while (j < number) {
+          pattren += "*";
+          j++;
+          
+        }
+        document.write(pattren + "<br>");
+        i++;
+      }
+
+      // b. 
+      document.write("<br><b>b.</b> <br>")
+      i = 1;
+      while (i <= number) {
+        var j = 1;
+        while (j <= i) {
+          document.write("*") ;
+          j++;
+        }
+        document.write("<br>")
+        i++;
+      }
+      // c.
+      document.write("<br><b>c.</b> <br>")
+      i = number;
+      while (i >= 1) {
+        var j = 1;
+        while (j <= i) {
+          document.write("*");
+          j++;
+        }
+          document.write("<br>");
+        i--;
+      }
+
+    </script>
   </body>
 </html>
